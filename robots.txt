@@ -1,5 +1,16 @@
 User-Agent: *
+Disallow: /page36839625.html
+Disallow: /page36839645.html
+Disallow: /page-404
+Disallow: /tilda/form*
+Disallow: /tilda/rec*
+Disallow: /tilda/click*
+Disallow: /tilda/scroll*
+Disallow: /tilda/popup*
+Disallow: /tilda/cart*
+Disallow: /tilda/product*
+Disallow: /tilda/event*
 Disallow:
 
 
-Sitemap: https://passquare.kz/sitemap.xml
+Sitemap: https://passquare.com/sitemap.xml

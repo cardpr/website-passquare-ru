@@ -1,0 +1,67 @@
+ErrorDocument 403 /page-404/index.html
+ErrorDocument 404 /page-404/index.html
+
+DirectoryIndex index.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://passquare\.com/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.passquare.com [NC]
+RewriteRule ^(.*)$ https://passquare\.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/project6819980/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+
+RewriteRule ^product/?$ product/index.html [NC,L]
+RewriteRule ^marketplace/?$ marketplace/index.html [NC,L]
+RewriteRule ^pricing-euro/?$ pricing-euro/index.html [NC,L]
+RewriteRule ^pricing-usd/?$ pricing-usd/index.html [NC,L]
+RewriteRule ^contact/?$ contact/index.html [NC,L]
+RewriteRule ^offer/?$ offer/index.html [NC,L]
+RewriteRule ^privacy/?$ privacy/index.html [NC,L]
+RewriteRule ^materials/?$ materials/index.html [NC,L]
+RewriteRule ^agencies/?$ agencies/index.html [NC,L]
+RewriteRule ^page-404/?$ page-404/index.html [NC,L]
+RewriteRule ^old/?$ old/index.html [NC,L]
+RewriteRule ^draft/?$ draft/index.html [NC,L]
+RewriteRule ^integrations/api/?$ integrations/api/index.html [NC,L]
+RewriteRule ^integrations/loyverse/?$ integrations/loyverse/index.html [NC,L]
+RewriteRule ^integrations/erply/?$ integrations/erply/index.html [NC,L]
+RewriteRule ^integrations/getresponse/?$ integrations/getresponse/index.html [NC,L]
+RewriteRule ^integrations/syrve/?$ integrations/syrve/index.html [NC,L]
+RewriteRule ^integrations/square/?$ integrations/square/index.html [NC,L]
+RewriteRule ^integrations/?$ integrations/index.html [NC,L]
+RewriteRule ^usecases/online/?$ usecases/online/index.html [NC,L]
+RewriteRule ^usecases/horeca/?$ usecases/horeca/index.html [NC,L]
+RewriteRule ^usecases/?$ usecases/index.html [NC,L]
+RewriteRule ^crm/?$ crm/index.html [NC,L]
+RewriteRule ^test/?$ test/index.html [NC,L]
+RewriteRule ^offer_tariffs/?$ offer_tariffs/index.html [NC,L]
+RewriteRule ^bug-bounty/?$ bug-bounty/index.html [NC,L]
+
+RewriteRule ^api$ https://passquare\.com/integrations/api [R=301,NC,L]
+
+RewriteRule ^extra$ https://passquare\.com/marketplace [R=301,NC,L]
+
+RewriteRule ^referral$ https://passquare\.com/agencies [R=301,NC,L]
+
+RewriteRule ^agent_offer$ https://passquare\.com/offer [R=301,NC,L]
+
+RewriteRule ^pricing$ https://passquare\.com/pricing-euro [R=301,NC,L]
+
+RewriteRule ^help/api$ https://passquare\.com/integrations/api [R=301,NC,L]
+
+RewriteRule ^help$ https://passquare\.com/integrations/api [R=301,NC,L]
+
+RewriteRule ^c$ https://passquare\.com/ [R=301,NC,L]
+
+RewriteRule ^card$ https://passquare\.com/ [R=301,NC,L]
+
+
+<IfModule mod_headers.c>
+	Header unset X-Frame-Options
+</IfModule>
