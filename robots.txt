@@ -2,4 +2,4 @@ User-Agent: *
 Disallow:
 
 
-Sitemap: https://ru.cardpr.com/sitemap.xml
+Sitemap: https://passquare.kz/sitemap.xml
