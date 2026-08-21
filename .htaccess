@@ -1,0 +1,20 @@
+ErrorDocument 403 /page70579457.html
+ErrorDocument 404 /page70579457.html
+
+DirectoryIndex page70581303.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://passquare\.kz/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.passquare.kz [NC]
+RewriteRule ^(.*)$ https://passquare\.kz/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^card$ https://passquare\.kz/ [R=301,NC,L]
+
+
