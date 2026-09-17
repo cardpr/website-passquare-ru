@@ -1,4 +1,12 @@
 (function () {
+  var SITE_VERSION = "5.02.184";
+  var versionEl = document.createElement("div");
+  versionEl.className = "site-version";
+  versionEl.textContent = "version: " + SITE_VERSION;
+  var footerWrap = document.querySelector(".footer .wrap") || document.querySelector(".footer");
+  if (footerWrap) footerWrap.appendChild(versionEl);
+  else document.body.appendChild(versionEl);
+
   var nav = document.getElementById("site-nav");
   var toggle = document.querySelector(".nav-toggle");
   if (nav && toggle) {

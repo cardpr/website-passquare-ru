@@ -709,6 +709,27 @@ a.more:hover {
   font-size: 13px;
 }
 
+.site-version {
+  display: block;
+  margin-top: 28px;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer .site-version {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+body > .site-version {
+  margin: 16px 24px 24px auto;
+  width: fit-content;
+  color: var(--muted);
+  opacity: 0.75;
+}
+
 .legal {
   line-height: 1.6;
 }
