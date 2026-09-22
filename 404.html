@@ -25,7 +25,12 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@500;800&display=swap"
     />
-    <link rel="stylesheet" href="/css/site.css?v=20260919f" />
+    <script>
+      document.write('<script src="/js/version.js?t=' + Date.now() + '"><\/script>');
+    </script>
+    <script>
+      siteCss("/css/site.css");
+    </script>
   </head>
   <body>
     <header class="header">
@@ -50,7 +55,9 @@
         <a class="btn btn-primary" href="/">Перейти на главную ›</a>
       </div>
     </main>
-    <script src="/js/logo-press.js?v=20260919f" defer></script>
-    <script src="/js/site.js?v=20260919f" defer></script>
+    <script>
+      siteJs("/js/logo-press.js", "defer");
+      siteJs("/js/site.js", "defer");
+    </script>
   </body>
 </html>

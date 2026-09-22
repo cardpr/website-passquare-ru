@@ -1,5 +1,4 @@
 (function () {
-  var SITE_VERSION = "5.02.184";
   var versionEl = document.createElement("div");
   versionEl.className = "site-version";
   versionEl.textContent = "version: " + SITE_VERSION;
