@@ -102,13 +102,36 @@ a:hover {
 }
 
 .logo {
+  --logo-size: 48px;
   display: inline-flex;
   align-items: center;
   gap: 0.15em;
-  height: 48px;
+  height: var(--logo-size);
   overflow: visible;
   color: var(--ink);
   text-decoration: none;
+}
+
+/* Hold the SVG lockup box before logo-press.js runs, so the logo does not grow on load. */
+.logo:not(.logo--cardpr):not(.logo--passquare) {
+  visibility: hidden;
+  animation: logo-reveal 0s 2s forwards;
+}
+
+.logo--passquare,
+.logo:not(.logo--cardpr):has(img[src*="passquare" i]) {
+  width: calc(var(--logo-size) * 1.18 + 0.15em + var(--logo-size) * 0.72 * 965 / 257);
+}
+
+.logo--cardpr,
+.logo:not(.logo--passquare):has(img[src*="cardpr" i]) {
+  width: calc(var(--logo-size) * 1.18 + 0.15em + var(--logo-size) * 0.72 * 803 / 257);
+}
+
+@keyframes logo-reveal {
+  to {
+    visibility: visible;
+  }
 }
 
 .logo:hover {

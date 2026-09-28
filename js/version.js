@@ -1,6 +1,14 @@
-var SITE_VERSION = "5.03.220";
+var SITE_VERSION = "5.03.221";
 var SITE_VERSION_URL =
   (document.currentScript && document.currentScript.src.split("?")[0]) || "/js/version.js";
+
+document.write(
+  '<script src="' +
+    SITE_VERSION_URL.replace(/version\.js$/, "logo-press.js") +
+    "?v=" +
+    SITE_VERSION +
+    '"><\/script>'
+);
 
 function siteCss(href) {
   document.write('<link rel="stylesheet" href="' + href + "?v=" + SITE_VERSION + '">');
